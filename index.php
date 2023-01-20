@@ -74,7 +74,9 @@
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
                                     </div>
+                                    
                                 </div>
+                                <img src="assets/img/logo.png" alt="">
                             </div>
                         </div>
                     </div>

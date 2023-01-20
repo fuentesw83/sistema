@@ -155,7 +155,7 @@ function login($usuario, $password){
 
     global $mysqli;
 
-    $stmt = $mysqli->prepare("SELECT id, id_tipo, password FROM usuarios WHERE usuario = ? || correo = ? LIMIT 1");
+    $stmt = $mysqli->prepare("SELECT id, id_tipo, nombre, password FROM usuarios WHERE usuario = ? || correo = ? LIMIT 1");
     $stmt->bind_param("ss", $usuario, $usuario);
     $stmt->execute();
     $stmt->store_result();
@@ -165,7 +165,7 @@ function login($usuario, $password){
 
         if(isActivo($usuario)){
 
-            $stmt->bind_result($id, $id_tipo, $passwd);
+            $stmt->bind_result($id, $id_tipo,$nombre, $passwd);
             $stmt->fetch();
 
             $validaPassw = password_verify($password, $passwd);
@@ -174,7 +174,8 @@ function login($usuario, $password){
                 lastSession($id);
                 $_SESSION['id_usuario'] = $id;
                 $_SESSION['tipo_usuario'] = $id_tipo;
-
+                $_SESSION['nombre'] = $nombre;
+                //echo "<script> alert(".$_SESSION['id_usuario'].");</script>";
                 header('Location:principal.php');
             }else{
                  echo "Wrong Password";

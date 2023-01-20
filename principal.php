@@ -5,7 +5,7 @@
     require 'funcs.php';
     session_start();
 
-    if(isset($_SESSION['id'])){
+    if(!isset($_SESSION['id_usuario'])){
 
         header("Location: index.php");
 
@@ -116,13 +116,14 @@
                             <?php } ?>
                             
 
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Plans
-                            </a>
+                            
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Wallet
+                            </a>
+                            <a class="nav-link" href="planes.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Planes
                             </a>
                         </div>
                     </div>

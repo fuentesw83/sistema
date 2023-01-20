@@ -167,6 +167,7 @@
                                         <div class="small"><a href="index.php">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
+                                <img src="assets/img/logo.png" alt="">
                             </div>
                         </div>
                     </div>
